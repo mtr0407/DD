@@ -6,8 +6,15 @@ Rails.application.routes.draw do
   post 'posts/:id/update' => 'posts#update'
   post 'posts/:id/destroy' => 'posts#destroy'
   get 'posts/:id/edit' => 'posts#edit'
-  get 'user/signup' => "user#signup"
-  get 'user/login' => "user#login"
   get '/' =>'home#top'
   get '/about' => 'home#about'
+  get 'user/signup' => "user#new"
+  get 'user/login' => "user#login"
+  get 'user/index' => 'user#index'
+  get 'user/:id/' => 'user#show'
+  get 'user/:id/edit' => 'user#edit'
+  post 'user/create' => 'user#create'
+  post 'user/:id/update' => 'user#update'
+  post 'user/:id/destroy' => 'user#destroy'
+  
 end

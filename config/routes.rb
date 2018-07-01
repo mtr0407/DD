@@ -15,7 +15,12 @@ Rails.application.routes.draw do
   get '/' =>'home#top'
   get '/about' => 'home#about'
   get 'user/signup' => "user#new"
-  get 'user/login' => "user#login"
+  
+  get '/login' => "user#login_form"
+  
+  post '/login' => 'user#login'
+  post '/logout' => 'user#logout'
+  
   get 'user/index' => 'user#index'
   get 'user/:id/' => 'user#show'
   get 'user/:id/edit' => 'user#edit'

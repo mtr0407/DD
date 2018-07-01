@@ -15,6 +15,13 @@
         <%= link_to("Double Dutch", "/")%>
       </div>
       <ul class="header-menus">
+       <% if session[:user_id] %>
+        <li>
+          <%= link_to("新規投稿", "/posts/new") %>
+        </li>   
+        <li>
+          <%= link_to("ログアウト", "/logout", {method:"post"}) %>
+        </li> 
         <li>
           <%= link_to("チームリスト", "/univercities") %>
         </li>         
@@ -31,12 +38,31 @@
           <%= link_to("Double Dutchとは", "/about") %>
         </li>  
         <li>
-          <%= link_to("新規投稿", "/posts/new") %>
+          <%= link_to("ユーザー一覧", "/user/index") %>
+        </li>
+        <% else %>
+        <li>
+          <%= link_to("チームリスト", "/univercities") %>
+        </li>         
+        <li>
+          <%= link_to("視聴数ランキング", "/about") %>
+        </li>
+        <li>
+          <%= link_to("投稿一覧", "/posts/index") %>
+        </li>  
+        <li>
+          <%= link_to("イベントスケジュール", "/about") %>
+        </li>         
+        <li>
+          <%= link_to("Double Dutchとは", "/about") %>
         </li>  
         <li>
           <%= link_to("ユーザー一覧", "/user/index") %>
         </li>
+        
+        <% end %>
       </ul>
+      
     </header>
     <!-- flash[:notice]に代入されたメッセージを表示してください -->
     <% if flash[:notice] %>

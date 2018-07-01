@@ -9,8 +9,23 @@
                <%= message %>
              </div>
             <%end%> 
-            <textarea name="content"><%= @post.content %></textarea>
-            <input type="submit" value="投稿">
+            <div class="pt20">
+              <label class="control-label">大学名</label>
+                <div class="select-wrap">
+                 <select name="" id="">
+                  <option value="">神戸大学</option>
+                  <option value="">大阪大学</option>
+                  <option value="">京都大学</option>
+                </select>
+              </div>
+            </div>
+            <label class="control-label">チーム名</label>
+              <input type="text" class="team_name"> 
+            <label class="control-label">YoutubeのURL</label>
+              <input type="text" class="youtube_url">
+            <label class="control-label">チームコメント</label>
+              <textarea name="content" class="team_comment"><%= @post.content %></textarea>
+              <input type="submit" value="投稿">
           </div>
         </div>
     <% end %>    

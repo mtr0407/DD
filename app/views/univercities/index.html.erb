@@ -1,0 +1,12 @@
+<div class="main">
+    <div class="univercities-title">大学一覧</div>
+    <div class="univercities">
+        <% @univercities.each do |univercity| %>
+            <div class="univercity">
+                <div class="univercity-image"></div>
+                <%= univercity.name %><br>
+                <%= link_to univercity.circle_name, univercity_path(univercity) %>
+            </div>
+        <% end %>
+    </div>
+</div>

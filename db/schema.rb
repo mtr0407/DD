@@ -10,26 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_30_102234) do
+ActiveRecord::Schema.define(version: 2018_07_01_043858) do
 
-  create_table "events", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "name", null: false
-    t.datetime "start_at", null: false
-    t.datetime "end_at", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "meetings", force: :cascade do |t|
+  create_table "demos", force: :cascade do |t|
     t.string "name"
-    t.datetime "start_time"
+    t.integer "univercity_id"
+    t.integer "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["team_id", "created_at"], name: "index_demos_on_team_id_and_created_at"
+    t.index ["team_id"], name: "index_demos_on_team_id"
+    t.index ["univercity_id", "created_at"], name: "index_demos_on_univercity_id_and_created_at"
+    t.index ["univercity_id"], name: "index_demos_on_univercity_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.integer "univercity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["univercity_id", "created_at"], name: "index_teams_on_univercity_id_and_created_at"
+    t.index ["univercity_id"], name: "index_teams_on_univercity_id"
+  end
+
+  create_table "univercities", force: :cascade do |t|
+    t.string "name"
+    t.string "circle_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

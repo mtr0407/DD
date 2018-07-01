@@ -1,0 +1,11 @@
+<div class="main">
+    <div class="teams-title"><%= @univercity.name %>のチーム一覧</div>
+    <div class="teams">
+        <% @teams.each do |team| %>
+            <div class="team">
+                <div class="team-image"></div>
+                <%= link_to team.name, team_path(team) %>
+            </div>
+        <% end %>
+    </div>
+</div>

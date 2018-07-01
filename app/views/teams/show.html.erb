@@ -1,0 +1,17 @@
+<div class="main">
+    <div class="demos-title"><%= @team.name %>のデモ一覧</div>
+    <div class="demos">
+        <% @demos.each do |demo| %>
+            <div class="demo">
+                <div class="demo-left">
+                    <iframe src="https://www.youtube.com/embed/T99drwkRScg"
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="demo-right">
+                    <%= demo.name %>
+                </div>
+                <div class="clear"></div>
+            </div>
+        <% end %>
+    </div>
+</div>

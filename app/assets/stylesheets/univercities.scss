@@ -1,0 +1,52 @@
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+.main {
+    width: 100%;
+}
+
+.univercities-title {
+    font-size: 24px;
+    text-align: center;
+    margin: 50px;
+}
+
+.univercities {
+    text-align: center;
+    width: 95%;
+    margin: auto;
+    .univercity {
+        display: inline-block;
+        float: left;
+        position: relative;
+        @include box_sizing;
+        border: 1px solid black;
+        box-shadow: 0 0 8px gray;
+        width: 18%;
+        margin: 1%;
+        height: 300px;
+        a {
+            font-size: 16px;
+            color: black;
+            &:hover {
+                color: black;
+            }
+            padding-top: 230px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+        }
+        .univercity-image {
+            height: 150px;
+            margin-bottom: 30px;
+            background: url(/assets/images/univercity.jpg);
+            background-size: cover;
+            background-color: rgba(0,0,0,0.6);
+        }
+    }
+}

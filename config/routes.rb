@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'demos/index'
+  get 'demos/show'
+  get 'teams/index'
+  get 'teams/show'
+  get 'univercities/index'
+  get 'univercities/show'
   get 'posts/index' => 'posts#index'
   get 'posts/new' => 'posts#new'
   get 'posts/:id' => 'posts#show'
@@ -16,5 +22,8 @@ Rails.application.routes.draw do
   post 'user/create' => 'user#create'
   post 'user/:id/update' => 'user#update'
   post 'user/:id/destroy' => 'user#destroy'
+  resources :univercities, only: [:index, :show]
+  resources :teams,        only: [:index, :show]
+  resources :demos,        only: [:index, :show]
   
 end

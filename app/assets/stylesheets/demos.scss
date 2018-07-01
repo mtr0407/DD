@@ -1,0 +1,48 @@
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+.main {
+    width: 100%;
+}
+
+.demos-title {
+    font-size: 24px;
+    text-align: center;
+    margin: 50px;
+}
+
+.demos {
+    width: 70%;
+    margin: auto;
+    .demo {
+        width: 100%;
+        margin-bottom: 40px;
+        @include box_sizing;
+        border: 1px solid darkgray;
+        @include box_sizing;
+        .demo-left {
+            display: inline-block;
+            float: left;
+            padding-top: 9px;
+            padding-left: 9px;
+            // width: 350px;
+            iframe {
+                margin: auto;
+            }
+        }
+        .demo-right {
+            font-size: 24px;
+            font-weight: bold;
+            padding-top: 30px;
+            display: inline-block;
+            float: right;
+            width: 50%;
+        }
+        .clear {
+            clear: both;
+        }
+    }
+}

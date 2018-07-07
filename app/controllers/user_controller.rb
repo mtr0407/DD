@@ -1,4 +1,15 @@
 class UserController < ApplicationController
+  before_action:authenticate_user, {only: [:show,:edit,:update]}
+  before_action:forbid_login_user, {only: [:new, :create, :login, :login_form]}
+  before_action:ensure_current_user, {only: [:edit, :update, :delete]}
+  
+  def ensure_current_user
+    if @current_user.id != params[:id].to_i
+      flash[:notice] = "権限がありません"
+      redirect_to("/posts/index")
+    end
+  end
+  
   def new
   # URLは"/user/signup"
     @user = User.new

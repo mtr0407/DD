@@ -3,7 +3,7 @@
     <h2>Super Cool Sports!!</h2>
   </div>
   <div class="btn-wrapper">
-   <% if session[:user_id] %>
+   <% if @current_user %>
    <% else %>
     <%=link_to("Sign Up", "/user/signup", { :class => "btn signup"})%>
     <p>or</p>

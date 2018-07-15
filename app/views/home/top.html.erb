@@ -1,13 +1,17 @@
 <div class="main top-main">
-  <div class="top-message">
-    <h2>Super Cool Sports!!</h2>
-  </div>
-  <div class="btn-wrapper">
-   <% if @current_user %>
-   <% else %>
-    <%=link_to("Sign Up", "/user/signup", { :class => "btn signup"})%>
-    <p>or</p>
-    <%=link_to("Login", "/login", { :class => "btn login"})%>
-  <% end %>
+ <div class="top-message">
+  <h2>Super Cool Sports!!</h2>
+ </div>
+<div class="bg-modal">
+    <div class="modal-content">
+        <div class="close">+</div>
+        <img src="/user_images/IMG_8143.PNG">
+        <form action="">
+            <input type="text" placeholder="e-mail">
+            <input type="text" placeholder="password">
+            <a href="" class="button">submit</a>
+        </form>
+    </div>
 </div>
+
 

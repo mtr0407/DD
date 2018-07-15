@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   </head>
 
   <body>
@@ -49,6 +50,15 @@
             <%= link_to("ユーザー一覧", "/user/index") %>
           </li>
           <% else %>
+          <li class="signup">アカウント登録</li>
+          <li>
+            <%=link_to("ログイン", "/login", { :class => "login"})%>
+          </li>          
+          
+          
+          
+          
+          
           <li>
             <%= link_to("チームリスト", "/univercities") %>
           </li>         
@@ -79,5 +89,6 @@
       </div>
     <% end %>
     <%= yield %>
+    <script src="application.js"></script>
   </body>
 </html>

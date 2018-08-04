@@ -1,11 +1,24 @@
 <div class="main">
-    <div class="teams-title"><%= @univercity.name %>のチーム一覧</div>
-    <div class="teams">
-        <% @teams.each do |team| %>
-            <div class="team">
-                <div class="team-image"></div>
-                <%= link_to team.name, team_path(team) %>
-            </div>
-        <% end %>
+　<div class="bg-modal">
+    <div class="modal-content">
+    　<div class="close">+</div>
+        <img src="/user_images/IMG_8143.PNG">
+        　<%= form_tag("/teams")  do %>
+            <input name="name" type="text" placeholder="チーム名">
+            <%= hidden_field_tag :univercity_id, @univercity.id %>
+            <input type="submit" value="新規登録" class="button">
+        　<% end %>
+    　</div>
+    </div>
+    <div class="teams-title"><%= @univercity.name %>のチーム一覧
+      <div class="univercities-title">チームを追加する</div>
+        <div class="teams">
+          <% @teams.each do |team| %>
+              <div class="team">
+                  <div class="team-image"></div>
+                  <%= link_to team.name, team_path(team) %>
+              </div>
+          <% end %>
+        </div>
     </div>
 </div>

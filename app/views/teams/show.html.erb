@@ -1,17 +1,39 @@
 <div class="main">
-    <div class="demos-title"><%= @team.name %>のデモ一覧</div>
+    <div class="demos-title"><%= @team.name %>の動画一覧</div>
+    <div class="univercities-title">動画を追加する</div>
     <div class="demos">
         <% @demos.each do |demo| %>
             <div class="demo">
                 <div class="demo-left">
-                    <iframe src="https://www.youtube.com/embed/T99drwkRScg"
+                    
+                    <iframe src="<%= demo.content_with_frame %>"
                             frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
                 <div class="demo-right">
                     <%= demo.name %>
+                    <p><%= demo.comment %></p>
+                    <p><%= demo.id %></p>
                 </div>
                 <div class="clear"></div>
             </div>
         <% end %>
     </div>
+ <div class="bg-modal">
+  <div class="modal-content">
+   <div class="close">+</div>
+    <img src="/user_images/IMG_8143.PNG">
+     <%= form_tag("/demos")  do %>
+      <input name="name" type="text" placeholder="動画名">
+      <input name="url" type="url" placeholder="URL">
+      <textarea name="comment" type="text" placeholder="コメント"></textarea>
+      <%= hidden_field_tag :univercity_id, @univercity.id %>
+      <%= hidden_field_tag :team_id, @team.id %>
+      <input type="submit" value="新規投稿" class="button">
+     <% end %>
+    </div>
+  </div>
+ </div>
 </div>
+
+
+

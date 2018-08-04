@@ -1,0 +1,36 @@
+<div class="main demos-new">
+  <div class="container">
+    <h1 class="form-heading">投稿する</h1>
+    
+    <%= form_for @demo do |f| %>
+        <div class="form">
+          <div class="form-body">
+            <% @demo.errors.full_messages.each do |message| %>
+             <div class="form_error">
+               <%= message %>
+             </div>
+            <%end%> 
+            <div class="pt20">
+              
+            <%= f.label :name, "デモタイトル" %>
+            <%= f.text_field :name, placeholder: "(例)DDDW2015 L-BOX" %>
+            
+            <%= f.label :url, "YoutubeのURL" %>
+            <%= f.text_field :url, placeholder: "(例)https://www.google.com/" %>
+            
+            <%= f.label :univercity_name, "大学名" %>
+            <%= f.text_field :univercity_name, placeholder: "(例)神戸大学" %>
+            
+            <%= f.label :team_name, "チーム名" %>
+            <%= f.text_field :team_name, placeholder: "(例)L-BOX" %>
+            
+            <%= f.label :comment, "コメント" %>
+            <%= f.text_area :comment, placeholder: "(例)ステッパーの洋輔君が見せ場でミスをしました。" %>
+            
+            <%= f.submit "投稿する" %>
+              
+          </div>
+        </div>
+    <% end %>    
+  </div>
+</div>

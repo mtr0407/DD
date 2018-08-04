@@ -1,12 +1,30 @@
-<div class="main">
-    <div class="univercities-title">大学一覧</div>
-    <div class="univercities">
+
+<div class="main2">
+    <div class="bg-modal">
+      <div class="modal-content">
+        <div class="close">+</div>
+          <img src="/user_images/IMG_8143.PNG">
+            <%= form_tag("/univercities")  do %>
+              <input name="name" type="text" placeholder="大学名">
+              <input name="circle_name" type="text" placeholder="サークル名">
+              <input type="submit" value="新規登録" class="button">
+            <% end %>
+        </div>
+      </div>
+    <div class="teams-title">大学一覧</div>
+    <div class="univercities-title">大学を追加する</div>
+    　<div class="univercities">
         <% @univercities.each do |univercity| %>
             <div class="univercity">
-                <div class="univercity-image"></div>
+                <div class="univercity-image">
+                    <img src="<%= "/user_images/1.jpg" %>" class="image2">
+                </div>
                 <%= univercity.name %><br>
                 <%= link_to univercity.circle_name, univercity_path(univercity) %>
             </div>
         <% end %>
+    　</div>
     </div>
 </div>
+
+

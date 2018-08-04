@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_01_165612) do
+ActiveRecord::Schema.define(version: 2018_08_04_092936) do
 
   create_table "demos", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,11 @@ ActiveRecord::Schema.define(version: 2018_07_01_165612) do
     t.integer "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "url"
+    t.string "univercity_name"
+    t.string "team_name"
+    t.string "comment"
+    t.string "content_with_frame"
     t.index ["team_id", "created_at"], name: "index_demos_on_team_id_and_created_at"
     t.index ["team_id"], name: "index_demos_on_team_id"
     t.index ["univercity_id", "created_at"], name: "index_demos_on_univercity_id_and_created_at"
@@ -44,6 +49,7 @@ ActiveRecord::Schema.define(version: 2018_07_01_165612) do
     t.string "circle_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_name"
   end
 
   create_table "users", force: :cascade do |t|

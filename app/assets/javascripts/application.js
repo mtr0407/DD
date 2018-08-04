@@ -19,7 +19,7 @@
 
 $(function(){
 
-  $('.signup').click(function(){
+  $('.univercities-title').click(function(){
     $('.bg-modal').fadeIn(300).css('display','flex');
   });
   $('.close').click(function(){

@@ -17,14 +17,16 @@
         <% @univercities.each do |univercity| %>
             <div class="univercity">
                 <div class="univercity-image">
-                    <img src="<%= "/user_images/1.jpg" %>" class="image2">
+                  <img src="<%= "/assets/images/default.jpg" %>" class="image2">
                 </div>
                 <%= univercity.name %><br>
                 <%= link_to univercity.circle_name, univercity_path(univercity) %>
+                
+                <!--<div class="edit"><i class="fa fa-wrench"></i></div>-->
+                <!--<div class="delete"><i class="fa fa-trash"></i></div>-->
             </div>
         <% end %>
     　</div>
     </div>
 </div>
-
 

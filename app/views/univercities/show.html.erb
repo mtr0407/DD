@@ -10,11 +10,20 @@
         　<% end %>
     　</div>
     </div>
+    <img src="<%= "/assets/images/default.jpg" %>" class="univercity-image">
+    
+    
+      <input placeholder="大学名を変更する">
+      <input placeholder="サークル名を変更する">
+      <input type="file">
+
+
     <div class="teams-title"><%= @univercity.name %>のチーム一覧
       <div class="univercities-title">チームを追加する</div>
         <div class="teams">
           <% @teams.each do |team| %>
               <div class="team">
+                  <img src="<%= "/assets/images/default2.jpg" %>" class="image5">
                   <div class="team-image"></div>
                   <%= link_to team.name, team_path(team) %>
               </div>

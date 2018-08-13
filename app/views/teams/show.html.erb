@@ -1,4 +1,7 @@
 <div class="main">
+    <img src="<%= "/assets/images/default2.jpg" %>" class="image4">
+    <input placeholder="チーム名を変更する">
+    <input type="file">    
     <div class="demos-title"><%= @team.name %>の動画一覧</div>
     <div class="univercities-title">動画を追加する</div>
     <div class="demos">
@@ -12,7 +15,6 @@
                 <div class="demo-right">
                     <%= demo.name %>
                     <p><%= demo.comment %></p>
-                    <p><%= demo.id %></p>
                 </div>
                 <div class="clear"></div>
             </div>

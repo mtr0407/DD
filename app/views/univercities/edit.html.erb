@@ -1,0 +1,16 @@
+<div class="main uunivercities-edit">
+  <div class="container">
+    <div class="form-heading">編集する</div>
+    <div class="form univercities-form">
+      <div class="form-body">
+        <%= form_tag("/univercities/#{@univercity.id}") do %>
+          <p>大学名</p>
+          <input name="name" value="<%= @name %>">
+          <p>サークル名</p>
+          <input name="circle_name" value="<%= @circle_name %>">
+          <input type="submit" value="完了">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

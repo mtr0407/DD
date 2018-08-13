@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :univercities, only: [:index, :show, :create]
+  resources :univercities, only: [:index, :show, :create, :edit]
   resources :teams,        only: [:index, :show, :create]
   resources :demos
   get 'demos/index'
@@ -31,7 +31,5 @@ Rails.application.routes.draw do
   post 'user/create' => 'user#create'
   post 'user/:id/update' => 'user#update'
   post 'user/:id/destroy' => 'user#destroy'
-  # post 'univercities/create' => 'univercities#create'
-
   
 end

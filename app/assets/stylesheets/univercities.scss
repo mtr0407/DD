@@ -62,7 +62,28 @@
             background-size: cover;
             background-color: rgba(0,0,0,0.6);
         }
+        .edit{
+          position: absolute;
+          bottom: 0;
+          right:25px;
+          color:gray;
+        }
+        .delete{
+          position: absolute;
+          bottom: 0;
+          right:5px;
+          color:gray;
+        }
     }
+}
+
+.univercity-image{
+  margin-top:30px;
+}
+
+.image5{
+    height:150px;
+    width:100%;
 }
 
 /* formについて ================================ */
@@ -127,15 +148,12 @@
   margin: 20px auto;
   height:25px;
   font-size:18px;
-  
-  
 }
 
 .button{
   background-color:#3300ff;
   padding:20px;
   line-height:5px;
-//   height:20px;
   color:white;
   border-radius:10px;
   display:inline-block;

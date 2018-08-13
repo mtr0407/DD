@@ -12,12 +12,11 @@ class TeamsController < ApplicationController
   
   def create
     @univercity = Univercity.find_by(id: params[:univercity_id])
-    # @team = Team.new(name: params[:name], univercity_id: params[:id])
     @team = @univercity.teams.build(name: params[:name],
                                     univercity_id: @univercity.id)
     if @team.save
       flash[:notice] = "投稿に成功しました"
-      redirect_to("/univercities/index")
+      redirect_to("/univercities/#{@univercity.id}")
     else
       flash[:notice] = "投稿に失敗しました"
     end

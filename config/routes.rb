@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :univercities, only: [:index, :show, :create, :edit]
+  resources :univercities, only: [:index, :show, :create, :edit, :destroy]
   resources :teams,        only: [:index, :show, :create]
   resources :demos
   get 'demos/index'

@@ -16,6 +16,7 @@
       <input placeholder="大学名を変更する">
       <input placeholder="サークル名を変更する">
       <input type="file">
+      <%= link_to("削除", "/univercities/#{@univercity.id}", {method:"delete"}) %>
 
 
     <div class="teams-title"><%= @univercity.name %>のチーム一覧

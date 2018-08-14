@@ -42,4 +42,11 @@ class UnivercitiesController < ApplicationController
       render("/univercity/edit")
     end
   end
+  
+  def destroy
+    @univercity = Univercity.find_by(id: params[:id])
+    @univercity.destroy
+    redirect_to("/univercities")
+  end
+  
 end
